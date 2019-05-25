@@ -1,17 +1,13 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import moment from 'moment'
-import './style.scss'
+import React from 'react';
+import { Link } from 'gatsby';
+import moment from 'moment';
+import './style.scss';
 
 class Post extends React.Component {
   render() {
-    const {
-      title,
-      date,
-      category,
-      description,
-    } = this.props.data.node.frontmatter
-    const { slug, categorySlug } = this.props.data.node.fields
+    const { title, date, category, description } = this.props.data.node.frontmatter;
+    console.log(this.props.data.node);
+    const { slug, categorySlug } = this.props.data.node.fields;
 
     return (
       <div className="post">
@@ -39,8 +35,8 @@ class Post extends React.Component {
           Read
         </Link>
       </div>
-    )
+    );
   }
 }
 
-export default Post
+export default Post;
