@@ -1,15 +1,15 @@
 ---
 title: Advice to Recent Bootcamp Grads
-date: "2018-12-02T16:51:00.000Z"
+date: "2019-05-27T16:51:00.000Z"
 layout: post
 draft: false
 path: "/posts/advice-to-bootcamp-grads/"
-category: "Programming Books"
+category: "Thoughts"
 tags:
   - "Advice"
   - "Bootcamp"
   - "Software"
-description: "My advice to recent bootcamp grads"
+description: "5 pieces of advice I wish I had when I graduated bootcamp"
 ---
 
 First off, congratulations! You have just completed a bunch of work in a short period of time and if you are like me, you did it with a ton of fear. You should feel proud of what you’ve accomplished. 
