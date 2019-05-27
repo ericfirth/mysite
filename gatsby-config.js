@@ -39,16 +39,16 @@ module.exports = {
       resolve: 'gatsby-plugin-feed',
       options: {
         query: `
-					{
-						site {
-							siteMetadata {
-								site_url: url
-								title
-								description: subtitle
-							}
-						}
-					}
-				`,
+          {
+            site {
+              siteMetadata {
+                site_url: url
+                title
+                description: subtitle
+              }
+            }
+          }
+        `,
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) =>
@@ -62,30 +62,30 @@ module.exports = {
                 })
               ),
             query: `
-							{
-								allMarkdownRemark(
-									limit: 1000,
-									sort: { order: DESC, fields: [frontmatter___date] },
-									filter: { frontmatter: { layout: { eq: "post" }, draft: { ne: true } } }
-								) {
-									edges {
-										node {
-											html
-											fields {
-												slug
-											}
-											frontmatter {
-												title
-												date
-												layout
-												draft
-												description
-											}
-										}
-									}
-								}
-							}
-						`,
+              {
+                allMarkdownRemark(
+                  limit: 1000,
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                  filter: { frontmatter: { layout: { eq: "post" }, draft: { ne: true } } }
+                ) {
+                  edges {
+                    node {
+                      html
+                      fields {
+                        slug
+                      }
+                      frontmatter {
+                        title
+                        date
+                        layout
+                        draft
+                        description
+                      }
+                    }
+                  }
+                }
+              }
+            `,
             output: '/rss.xml',
           },
         ],
@@ -134,24 +134,24 @@ module.exports = {
       resolve: 'gatsby-plugin-sitemap',
       options: {
         query: `
-						{
-							site {
-								siteMetadata {
-									url
-								}
-							}
-							allSitePage(
-								filter: {
-									path: { regex: "/^(?!/404/|/404.html|/dev-404-page/)/" }
-								}
-							) {
-								edges {
-									node {
-										path
-									}
-								}
-							}
-					}`,
+            {
+              site {
+                siteMetadata {
+                  url
+                }
+              }
+              allSitePage(
+                filter: {
+                  path: { regex: "/^(?!/404/|/404.html|/dev-404-page/)/" }
+                }
+              ) {
+                edges {
+                  node {
+                    path
+                  }
+                }
+              }
+          }`,
         output: '/sitemap.xml',
         serialize: ({ site, allSitePage }) =>
           allSitePage.edges.map(edge => {
@@ -200,6 +200,12 @@ module.exports = {
           }),
         ],
         precision: 8,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-15023829-2',
       },
     },
   ],
